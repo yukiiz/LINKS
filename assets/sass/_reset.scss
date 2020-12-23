@@ -1,0 +1,387 @@
+@charset "utf-8";
+// ===================================================================
+// リセットCSS
+// ===================================================================
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+	box-sizing: border-box;
+}
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+@mixin fontsize($size: 24) {
+	font-size: $size + px;
+	font-size: ($size / 10) * 1rem;
+}
+@mixin clearfix {
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+}
+
+body {
+	-webkit-text-size-adjust: 100%;
+	line-height: 1.5;
+	font-family: $base_font;
+	font-weight: 500;
+	color: $font_color;
+	@include fontsize(15);
+	@media all and (-ms-high-contrast: none) {
+		font-family: $base_font;
+	}
+}
+h1 {
+	@include fontsize(30);
+	@media #{$maxtb_v} {
+		@include fontsize(20);
+	}
+}
+h2 {
+	@include fontsize(24);
+	@media #{$maxtb_v} {
+		@include fontsize(20);
+	}
+}
+h3 {
+	@include fontsize(18);
+	@media #{$maxtb_v} {
+		@include fontsize(15);
+	}
+}
+p,
+li {
+	@include fontsize(15);
+	@media #{$maxtb_v} {
+		@include fontsize(13);
+	}
+}
+span {
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+ul,
+li {
+	list-style: none;
+}
+textarea,
+input,
+select {
+	font-family: $base_font;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+}
+input[type="submit"],
+input[type="button"] {
+	border-radius: 0;
+	-webkit-box-sizing: content-box;
+	-webkit-appearance: button;
+	appearance: button;
+	border: none;
+	box-sizing: border-box;
+	&::-webkit-search-decoration {
+		display: none;
+	}
+	&::focus {
+		outline-offset: -2px;
+	}
+}
+a {
+	transition: all 0.5s ease;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+	color: $link_color;
+	outline: none;
+	box-sizing: border-box;
+	@media #{$maxtb_v} {
+		@include fontsize(15);
+	}
+}
+a:hover {
+	color: $sub_color;
+	text-decoration: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #cccccc;
+	margin: 1em 0;
+	padding: 0;
+}
+input,
+select {
+	vertical-align: middle;
+}
+img {
+	vertical-align: bottom;
+}
+sup {
+	vertical-align: baseline;
+	position: relative;
+	top: -1ex;
+}
+button {
+	outline: none;
+}
+/*
+dl {
+	border-bottom: 1px solid $sub_color;
+}
+dt {
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	vertical-align: top;
+	padding-top: 15px;
+	@media #{$maxsp} {
+		display: block;
+		text-align: left;
+		width: 100%;
+	}
+}
+dd {
+	display: inline-block;
+	margin-bottom: 0.5rem;
+	margin-left: 0;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	width: 68%;
+	@media #{$maxsp} {
+		display: block;
+		width: 100%;
+	}
+}
+*/
+.right {
+	text-align: right;
+}
+// ===================================================================
+//singleビジュアルエディタ設定
+// ===================================================================
+.blog-detail {
+	@include clearfix;
+	.blog-detail__date {
+		text-align: left;
+		margin-bottom: 35px;
+	}
+	font-size: 18px;
+	@media #{$maxsp} {
+		font-size: 14px;
+	}
+	p {
+		font-size: 18px;
+		margin-bottom: 15px;
+		@media #{$maxsp} {
+			font-size: 14px;
+		}
+	}
+	h1 {
+		font-size: 25px;
+		margin-bottom: 15px;
+	}
+	h2 {
+		font-size: 22px;
+		margin-bottom: 15px;
+	}
+	h3 {
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+	h4 {
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	h5 {
+		font-size: 14px;
+		margin-bottom: 15px;
+	}
+	h6 {
+		font-size: 12px;
+		margin-bottom: 15px;
+	}
+	pre {
+		white-space: pre-wrap;
+	}
+	ul {
+		margin-bottom: 20px;
+		li {
+			list-style-type: disc;
+			margin-left: 1.5em;
+			margin-bottom: 10px;
+		}
+	}
+	ol {
+		margin-bottom: 20px;
+		li {
+			list-style-type: decimal;
+			margin-left: 1.5em;
+			margin-bottom: 10px;
+		}
+	}
+	strong,
+	strong * {
+		font-weight: bold;
+	}
+	em,
+	em * {
+		font-style: italic;
+	}
+	blockquote {
+		position: relative;
+		padding: 40px 15px 14px 15px;
+		margin-bottom: 15px;
+		box-sizing: border-box;
+		font-style: italic;
+		background: #efefef;
+		color: #555;
+	}
+
+	blockquote:before {
+		display: inline-block;
+		position: absolute;
+		top: 13px;
+		left: 15px;
+		vertical-align: middle;
+		content: "”";
+		color: #cfcfcf;
+		font-size: 28px;
+		line-height: 1;
+	}
+	a {
+		color: #0860a8;
+		text-decoration: underline;
+	}
+	table {
+		border: 1px solid #000;
+		margin-bottom: 15px;
+		tr {
+			th,
+			td {
+				padding: 5px;
+				border: 1px solid #000;
+			}
+		}
+	}
+	.alignnone {
+		display: block;
+		margin-bottom: 15px;
+	}
+	.aligncenter {
+		display: block;
+		margin: 0 auto 15px;
+	}
+	.alignright {
+		float: right;
+		margin: 0 0 15px 10px;
+	}
+	.alignleft {
+		float: left;
+		margin: 0 10px 15px 0;
+	}
+}

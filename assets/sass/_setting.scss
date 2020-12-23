@@ -1,0 +1,55 @@
+@charset "utf-8";
+// ===================================================================
+// 設定用定義
+// ===================================================================
+
+// リセットCSS
+$resetCSS: 0;
+
+// フォント
+$base_font: メイリオ, Meiryo, "-apple-system", "Helvetica Neue", "游ゴシック",
+	"Yu Gothic", YuGothic, Verdana, "M+ 1p", sans-serif;
+
+//サブカラー
+$sub_color-o: #f57437;
+$sub_color-y: #fea901;
+$sub_color-g: #7ebe65;
+$sub_color-b: #cdae87;
+$sub_color-w: #fefefe;
+
+$sub_color: #ef5d2b;
+$sub_color02: #f1af2b;
+
+//テキストベースカラー
+$font_color: #222;
+$font_color02: #1c1c1c;
+$font-color03: #cdae87;
+
+//リンクベースカラー
+$link_color: #222;
+
+//backgroundカラー
+$bg_color: #f6f4f2;
+$footer-color: #413a36;
+//ベンダープレフィックス
+$prefixList: -moz-, -ms-, -o-, null;
+
+//PC最大幅
+$maxW: 1000px;
+//PC最大幅 （Padding込）
+$maxWpd: 1920px;
+
+// レスポンシブサイズ
+$minpc: "screen and (min-width: 960px)";
+$maxpc: "screen and (min-width: 1280px)";
+$mintb: "screen and (min-width: 768px)";
+$maxsp: "screen and (max-width: 767px)";
+$maxtb_port: "screen and (max-width: 1023px)";
+$maxtb: "screen and (max-width: " + $maxWpd + ")";
+$maxtb_v: "screen and (max-width: 959px)";
+
+$pcW: "screen and (min-width: 768px)";
+$spW: "screen and (max-width: 767px)";
+$tbW_port: "screen and (max-width: 1023px)";
+$tbW: "screen and (max-width: " + $maxWpd + ")";
+$tbW_v: "screen and (max-width: 768px)";
