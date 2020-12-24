@@ -229,6 +229,7 @@ sup {
 button {
 	outline: none;
 }
+/*
 dl {
 	border-bottom: 1px solid $sub_color;
 }
@@ -256,6 +257,131 @@ dd {
 		width: 100%;
 	}
 }
+*/
 .right {
 	text-align: right;
+}
+// ===================================================================
+//singleビジュアルエディタ設定
+// ===================================================================
+.blog-detail {
+	@include clearfix;
+	.blog-detail__date {
+		text-align: left;
+		margin-bottom: 35px;
+	}
+	font-size: 18px;
+	@media #{$maxsp} {
+		font-size: 14px;
+	}
+	p {
+		font-size: 18px;
+		margin-bottom: 15px;
+		@media #{$maxsp} {
+			font-size: 14px;
+		}
+	}
+	h1 {
+		font-size: 25px;
+		margin-bottom: 15px;
+	}
+	h2 {
+		font-size: 22px;
+		margin-bottom: 15px;
+	}
+	h3 {
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+	h4 {
+		font-size: 18px;
+		margin-bottom: 15px;
+	}
+	h5 {
+		font-size: 14px;
+		margin-bottom: 15px;
+	}
+	h6 {
+		font-size: 12px;
+		margin-bottom: 15px;
+	}
+	pre {
+		white-space: pre-wrap;
+	}
+	ul {
+		margin-bottom: 20px;
+		li {
+			list-style-type: disc;
+			margin-left: 1.5em;
+			margin-bottom: 10px;
+		}
+	}
+	ol {
+		margin-bottom: 20px;
+		li {
+			list-style-type: decimal;
+			margin-left: 1.5em;
+			margin-bottom: 10px;
+		}
+	}
+	strong,
+	strong * {
+		font-weight: bold;
+	}
+	em,
+	em * {
+		font-style: italic;
+	}
+	blockquote {
+		position: relative;
+		padding: 40px 15px 14px 15px;
+		margin-bottom: 15px;
+		box-sizing: border-box;
+		font-style: italic;
+		background: #efefef;
+		color: #555;
+	}
+
+	blockquote:before {
+		display: inline-block;
+		position: absolute;
+		top: 13px;
+		left: 15px;
+		vertical-align: middle;
+		content: "”";
+		color: #cfcfcf;
+		font-size: 28px;
+		line-height: 1;
+	}
+	a {
+		color: #0860a8;
+		text-decoration: underline;
+	}
+	table {
+		border: 1px solid #000;
+		margin-bottom: 15px;
+		tr {
+			th,
+			td {
+				padding: 5px;
+				border: 1px solid #000;
+			}
+		}
+	}
+	.alignnone {
+		display: block;
+		margin-bottom: 15px;
+	}
+	.aligncenter {
+		display: block;
+		margin: 0 auto 15px;
+	}
+	.alignright {
+		float: right;
+		margin: 0 0 15px 10px;
+	}
+	.alignleft {
+		float: left;
+		margin: 0 10px 15px 0;
+	}
 }

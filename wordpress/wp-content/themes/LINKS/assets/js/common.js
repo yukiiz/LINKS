@@ -220,41 +220,4 @@ $(window).on('scroll', scrollHandler);
 			  $(this).next('dd').slideToggle();
 			  $(this).toggleClass('active');
 			});
-     });
-     
-//スライダー設定
-$(".slider").slick({
-    autoplay: true,
-    infinite: true,
-    // autoplaySpeed:5000,
-    dots: false, //ドットのナビゲーションを表示
-    slidesToShow: 3, //表示するスライドの数
-    slidesToScroll: 1, //スクロールで切り替わるスライドの数
-    centerMode: true, //要素を中央寄せ
-    centerPadding: "10%", //両サイドの見えている部分のサイズ
-    responsive: [{
-            breakpoint: 1023, // 600〜1023px
-            settings: {
-                slidesToShow: 2, //表示するスライドの数
-                slidesToScroll: 1, //スクロールで切り替わるスライドの数
-                centerMode: true, //要素を中央寄せ
-                dots: true, //ドットのナビゲーションを表示
-                centerPadding: "10%", //両サイドの見えている部分のサイズ
-                rows: 1,
-                slidesPerRow: 1,
-            },
-        },
-        {
-            breakpoint: 768, // 600〜1023px
-            settings: {
-                slidesToShow: 1, //表示するスライドの数
-                slidesToScroll: 1, //スクロールで切り替わるスライドの数
-                centerMode: true, //要素を中央寄せ
-                dots: true, //ドットのナビゲーションを表示
-                centerPadding: "10%", //両サイドの見えている部分のサイズ
-                rows: 1,
-                slidesPerRow: 1,
-            },
-        },
-    ],
-});
+		 });
