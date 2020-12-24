@@ -7,9 +7,6 @@
         <?php bloginfo('name'); ?>
     </title>
     <meta charset="utf-8">
-    <meta name="keywords" content="<?php bloginfo('keywords'); ?>">
-    <meta name="description" content="<?php bloginfo('description'); ?>">
-    <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <mate name="sitelock-site-verification" content="6386" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
