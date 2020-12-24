@@ -1,4 +1,4 @@
-<?php get_header(); //header.phpを取得 
+<?php get_header(); //header.phpを取得
 ?>
 <!-- main-content-->
 <div class="main-content voice-details-page">
@@ -6,9 +6,9 @@
         <!-- ------------------------------------------------------title------------------------------------------------------------ -->
         <h1 class="title01 bold"><span class="color">お客様</span>の声</h1>
         <!-- -------------------------------------------------------voicemain-------------------------------------------------------------- -->
-        <?php if (have_posts()) : //条件分岐：投稿があるなら 
+        <?php if (have_posts()) : //条件分岐：投稿があるなら
         ?>
-        <?php while (have_posts()) : the_post(); //繰り返し処理開始 
+        <?php while (have_posts()) : the_post(); //繰り返し処理開始
             ?>
         <section class="voice-main">
             <ul class="voicemain-box">
@@ -32,7 +32,8 @@
                         </dd>
                         <dt class="building color">建物詳細</dt>
                         <dd>
-                            <?php echo get_post_meta(get_the_ID(), 'building', true); ?>
+                            <?php $building = get_field('building'); ?>
+                            <?php echo $building; ?>
                         </dd>
                     </dl>
                 </li>
@@ -90,7 +91,7 @@
                     if ($prev_post || $next_post) : // どちらか一方があれば表示
                     ?>
             <ul class="list-link text-center">
-                <?php if ($prev_post) : // 前の投稿があれば表示 
+                <?php if ($prev_post) : // 前の投稿があれば表示
                             ?>
                 <a href="<?php echo get_permalink($prev_post->ID); ?>" class="prev-link">
                     <li class="item prev text-center">
@@ -98,7 +99,7 @@
                     </li>
                 </a>
                 <?php endif; ?>
-                <?php if ($next_post) : // 次の投稿があれば表示 
+                <?php if ($next_post) : // 次の投稿があれば表示
                             ?>
                 <a href="<?php echo get_permalink($next_post->ID); ?>" class="next-link">
                     <li class="item next text-center">
@@ -109,13 +110,13 @@
             </ul>
         </section>
         <?php endif; ?>
-        <?php endwhile; // 繰り返し終了 
+        <?php endwhile; // 繰り返し終了
         ?>
-        <?php else : //条件分岐：投稿が無い場合は 
+        <?php else : //条件分岐：投稿が無い場合は
     ?>
         <h2>投稿がみつかりません。</h2>
         <p><a href="<?php echo esc_url(home_url('/')); ?>">トップページに戻る</a></p>
-        <?php endif; //条件分岐終了 
+        <?php endif; //条件分岐終了
     ?>
     </div>
 </div>

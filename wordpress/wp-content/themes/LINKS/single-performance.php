@@ -3,7 +3,7 @@
 Template Name: 施工事例ページ
 */
 ?>
-<?php get_header() //header.phpを取得 
+<?php get_header() //header.phpを取得
 ?>
 <!-- main-content-->
 <div class="main-content performance-detail-page">
@@ -11,9 +11,9 @@ Template Name: 施工事例ページ
         <!-- ------------------------------------------------------title------------------------------------------------------------ -->
         <h1 class="title01 bold"><span class="color">施工</span>事例</h1>
         <!-- -------------------------------------------------------main-------------------------------------------------------------- -->
-        <?php if (have_posts()) : //条件分岐：投稿があるなら 
+        <?php if (have_posts()) : //条件分岐：投稿があるなら
         ?>
-        <?php while (have_posts()) : the_post(); //繰り返し処理開始 
+        <?php while (have_posts()) : the_post(); //繰り返し処理開始
             ?>
         <div class="container">
             <div class="row">
@@ -34,8 +34,8 @@ Template Name: 施工事例ページ
                                 <h2 class="pt-3 pb-5">
                                     <?php the_title(); ?>
                                 </h2>
-                                <p class="txt">
-                                    <?php echo get_post_meta(get_the_ID(), 'performance-txt', true); ?></p>
+                                <?php $performance_txt = get_field('performance-txt'); ?>
+                                <p class="txt"><?php echo $performance_txt; ?></p>
                             </li>
                         </ul>
                         <p><?php the_content(); ?></p>
@@ -47,7 +47,7 @@ Template Name: 施工事例ページ
                                 if ($prev_post || $next_post) : // どちらか一方があれば表示
                                 ?>
                         <ul class="list-link text-center">
-                            <?php if ($prev_post) : // 前の投稿があれば表示 
+                            <?php if ($prev_post) : // 前の投稿があれば表示
                                         ?>
                             <a href="<?php echo get_permalink($prev_post->ID); ?>" class="prev-link">
                                 <li class="item prev text-center">
@@ -55,7 +55,7 @@ Template Name: 施工事例ページ
                                 </li>
                             </a>
                             <?php endif; ?>
-                            <?php if ($next_post) : // 次の投稿があれば表示 
+                            <?php if ($next_post) : // 次の投稿があれば表示
                                         ?>
                             <a href="<?php echo get_permalink($next_post->ID); ?>" class="next-link">
                                 <li class="item next text-center">
@@ -66,19 +66,19 @@ Template Name: 施工事例ページ
                         </ul>
                     </section>
                     <?php endif; ?>
-                    <?php endwhile; // 繰り返し終了 
+                    <?php endwhile; // 繰り返し終了
                     ?>
-                    <?php else : //条件分岐：投稿が無い場合は 
+                    <?php else : //条件分岐：投稿が無い場合は
                 ?>
                     <h2>投稿がみつかりません。</h2>
                     <p><a href="<?php echo esc_url(home_url('/')); ?>">トップページに戻る</a></p>
-                    <?php endif; //条件分岐終了 
+                    <?php endif; //条件分岐終了
                 ?>
                 </div>
                 <!-- ------------------------------------------------------sidebar------------------------------------------------------------ -->
                 <div class="col-sm-4 sidebar order-sm-1">
                     <aside>
-                        <?php get_sidebar(); //sidebar.phpを取得 
+                        <?php get_sidebar(); //sidebar.phpを取得
                                 ?>
                     </aside>
                 </div>
