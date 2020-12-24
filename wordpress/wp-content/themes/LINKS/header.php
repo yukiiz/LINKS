@@ -66,7 +66,7 @@
                             <a href="<?php echo home_url(); ?>/coating/">取り扱いコーティング</a>
                         </li>
                         <li class="item item02">
-                            <a href="<?php echo home_url(); ?>/contact/">
+                            <a href="<?php echo home_url(); ?>/estimate/">
                                 <div class="icon">
                                     <i class="fa fa-calculator"></i>
                                 </div>
@@ -117,7 +117,7 @@
         <div class="sp-btm-nav">
             <ul class="sp-btm-nav_list">
                 <li class="item item01">
-                    <a class="text-center" href="<?php echo home_url(); ?>/contact/">
+                    <a class="text-center" href="<?php echo home_url(); ?>/estimate/">
                         <div class="icon"><i class="fa fa-calculator"></i></div>
                         <p>無料お見積り相談</p>
                     </a>

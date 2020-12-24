@@ -540,6 +540,17 @@ body.fix {
 			}
 		}
 	}
+	.sp-list{
+		display: none;
+		padding: 0 10px;
+		justify-content: center;
+		@media #{$maxsp} {
+			display: flex;
+		}
+		.item{
+			padding: 0 10px;
+		}
+	}
 }
 // ===================================================================
 // breadcrumb
@@ -1179,9 +1190,13 @@ body.fix {
 		.categry {
 			margin: 40px 0;
 			span {
-				background-color: red;
-				color: white;
-				padding: 10px 20px;
+				color: #fea901;
+				a{
+					color: #fea901;
+				}
+				// background-color: red;
+				// color: white;
+				// padding: 10px 20px;
 			}
 		}
 		h2 {
@@ -2734,6 +2749,18 @@ body.fix {
 							//width: 100%;
 							@include fontsize(13);
 						}
+						&:focus{
+							&::placeholder{
+								color: #fff;
+							}
+							outline: none;
+						}
+						&:-webkit-autofill {
+							-webkit-box-shadow: 0 0 0px 1000px #fff inset;
+						}
+						&::placeholder{
+							color: #ddd;
+						}
 					}
 					input[type="file"] {
 						@media #{$maxsp} {
@@ -2741,7 +2768,7 @@ body.fix {
 						}
 					}
 					.wpcf7-list-item.first {
-						margin-left: 0.35em;
+						//margin-left: 0.35em;
 					}
 				}
 				.input {
@@ -2773,52 +2800,74 @@ body.fix {
 					width: 100%;
 				}
 			}
-			.radio {
-				display: inline-block;
-				label {
-					display: inline-block;
-					position: relative;
-					padding-left: 30px;
-					margin-right: 40px;
-					margin-top: 10px;
-					width: 100%;
-					@media #{$maxsp} {
-						//width: 100%;
-					}
-					&::before {
-						content: "";
-						height: 20px;
-						width: 20px;
-						display: block;
-						background: #fff;
-						border: 1px solid #adadad;
-						border-radius: 10px;
-						vertical-align: middle;
-						position: absolute;
-						top: 0;
-						left: 0;
-					}
-					&::after {
-						transition: transform 0.1s ease, -webkit-transform 0.1s ease;
-						content: "";
-						height: 12px;
-						width: 12px;
-						background: #00987a;
-						border-radius: 6px;
-						vertical-align: middle;
-						position: absolute;
-						top: 5px;
-						left: 5px;
-						transform: scale(0);
-					}
-					@media #{$maxsp} {
-						margin: 0 0 20px;
-						display: block;
-					}
+			input[type="radio"].wpcf7c-conf{
+				+ .wpcf7-list-item-label{
+					display: none!important;
 				}
 			}
-			input[type="radio"] {
-				display: none;
+			span.wpcf7-list-item{
+				margin: 0;
+			}
+			.form-table-cell dd span.wpcf7-not-valid-tip{
+				width: auto;
+			}
+			.wpcf7-form-control-wrap{
+				margin-bottom: 0;
+				padding: 0!important;
+				width: auto!important;
+				.wpcf7-radio{
+					width: auto;
+					padding: 0!important;
+					margin-top: 10px;
+					display: block;
+					.wpcf7-list-item{
+						padding: 0 10px 0;
+						input[type=radio]{
+							display: none;
+							margin: 0;
+							+ .wpcf7-list-item-label{
+								position: relative;
+								cursor: pointer;
+								display: inline-block;
+								padding: 0 30px 15px 28px;
+								white-space: nowrap;
+								width: auto;
+								&::before{
+									background: #FFF;
+									border: 1px solid #d2d2d2;
+									border-radius: 50%;
+									content: "";
+									position: absolute;
+									top: 2px;
+									left: 0;
+									display: block;
+									height: 18px;
+									width: 18px;
+								}
+								&:after {
+									transition: transform 0.3s ease;
+									background: #F45A65;
+									border-radius: 50%;
+									content: "";
+									display: block;
+									position: absolute;
+									top: 6px;
+									left: 4px;
+									height: 10px;
+									width: 10px;
+									transform: scale(0);
+								}
+							}
+							&:checked{
+								+ .wpcf7-list-item-label{
+									&:after {
+										transform: scale(1);
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 		.precautions {
@@ -2846,6 +2895,16 @@ body.fix {
 				margin: auto;
 			}
 		}
+	}
+	.wpcf7-validation-errors,
+	.wpcf7-acceptance-missing,
+	.wpcf7-response-output{
+		border: none!important;
+		color: #dc3232;
+		text-align: center;
+		font-size: 16px;
+		padding: 0;
+		margin: 0 0 10px;
 	}
 	.button-block {
 		text-align: center;

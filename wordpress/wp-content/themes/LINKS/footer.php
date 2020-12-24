@@ -38,13 +38,21 @@
             </ul>
             <ul class="pc-list pc-list04">
                 <li class="item">
-                    <a class="btn01 btn-guide" href="<?php echo home_url(); ?>/contact/">無料お見積り相談</a>
+                    <a class="btn01 btn-guide" href="<?php echo home_url(); ?>/estimate/">無料お見積り相談</a>
                 </li>
                 <li class="item">
                     <a class="btn01 btn-contact" href="<?php echo home_url(); ?>/contact/">企業・個人お問い合わせ</a>
                 </li>
             </ul>
         </div>
+        <ul class="sp-list sp-list01">
+            <li class="item">
+                <a href="<?php echo home_url(); ?>/policy/">プライバシーポリシー</a>
+            </li>
+            <li class="item">
+                <a href="<?php echo home_url(); ?>/sitemap/">サイトマップ</a>
+            </li>
+        </ul>
         <p>Copyright&copy;2020 All Right Reserved</p>
     </div>
     <!-- /.content-inner -->
