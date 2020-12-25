@@ -34,8 +34,7 @@ Template Name: 施工事例ページ
                                 <h2 class="pt-3 pb-5">
                                     <?php the_title(); ?>
                                 </h2>
-                                <?php $performance_txt = get_field('performance-txt'); ?>
-                                <p class="txt"><?php echo $performance_txt; ?></p>
+                                <p><?php echo nl2br(get_field('performance-txt')); ?></p>
                             </li>
                         </ul>
                         <p><?php the_content(); ?></p>

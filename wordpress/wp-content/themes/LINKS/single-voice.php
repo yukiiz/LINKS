@@ -28,12 +28,11 @@
                         <dd><?php echo get_post_meta(get_the_ID(), 'live', true); ?></dd>
                         <dt class="construction color">施工内容</dt>
                         <dd>
-                            <?php echo get_post_meta(get_the_ID(), 'construction', true); ?>
+                            <?php echo nl2br(get_field('construction')); ?>
                         </dd>
                         <dt class="building color">建物詳細</dt>
                         <dd>
-                            <?php $building = get_field('building'); ?>
-                            <?php echo $building; ?>
+                            <?php echo nl2br(get_field('building')); ?>
                         </dd>
                     </dl>
                 </li>
@@ -44,7 +43,7 @@
             <h2 class="title02"><span>ご意見・感想</span></h2>
             <div class="txt-box">
                 <p class="item">
-                    <?php echo get_post_meta(get_the_ID(), 'opinion', true); ?>
+                    <?php echo nl2br(get_field('opinion')); ?>
                 </p>
             </div>
         </section>
