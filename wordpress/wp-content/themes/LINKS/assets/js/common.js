@@ -221,3 +221,38 @@ $(window).on('scroll', scrollHandler);
 			  $(this).toggleClass('active');
 			});
 		 });
+
+//スライダー設定
+$(function(){
+$(".slider").slick({
+  autoplay: true,
+  infinite: true,
+  dots: false, //ドットのナビゲーションを表示
+  slidesToShow: 3, //表示するスライドの数
+  slidesToScroll: 1, //スクロールで切り替わるスライドの数
+  responsive: [
+    {
+      breakpoint: 1023, // 600〜1023px
+      settings: {
+        slidesToShow: 2, //表示するスライドの数
+        slidesToScroll: 1, //スクロールで切り替わるスライドの数
+        dots: true, //ドットのナビゲーションを表示
+        rows: 1,
+        slidesPerRow: 1,
+      },
+    },
+    {
+      breakpoint: 768, // 600〜1023px
+      settings: {
+        slidesToShow: 1, //表示するスライドの数
+        slidesToScroll: 1, //スクロールで切り替わるスライドの数
+        dots: true, //ドットのナビゲーションを表示
+        rows: 1,
+        slidesPerRow: 1,
+      },
+    },
+  ],
+  }).on('setPosition', function (event, slick) {
+    slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+  });
+});

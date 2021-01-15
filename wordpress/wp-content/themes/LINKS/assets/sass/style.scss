@@ -6,6 +6,7 @@
 @import "setting";
 //リセットCSS
 @import "reset";
+
 // ===================================================================
 // header/footer
 // ===================================================================
@@ -540,14 +541,14 @@ body.fix {
 			}
 		}
 	}
-	.sp-list{
+	.sp-list {
 		display: none;
 		padding: 0 10px;
 		justify-content: center;
 		@media #{$maxsp} {
 			display: flex;
 		}
-		.item{
+		.item {
 			padding: 0 10px;
 		}
 	}
@@ -1191,7 +1192,7 @@ body.fix {
 			margin: 40px 0;
 			span {
 				color: #fea901;
-				a{
+				a {
 					color: #fea901;
 				}
 				// background-color: red;
@@ -1841,13 +1842,13 @@ body.fix {
 		background-color: $bg_color;
 		padding: 50px 0;
 		.list {
-			display: flex;
-			justify-content: space-between;
-			margin: 20px 0 40px 0;
+			width: 80%;
+			margin: 20px auto 40px;
+			visibility: hidden;
 			.item_box {
 				background-color: $sub_color-w;
 				border-radius: 5px;
-				margin-right: 10px;
+				margin: 0 5px;
 				.box-img {
 					img {
 						width: 100%;
@@ -1870,6 +1871,59 @@ body.fix {
 				.txt {
 					padding-top: 10px;
 					display: block;
+				}
+			}
+			&.slick-initialized {
+				visibility: visible;
+			}
+			.slick-track {
+				display: flex !important;
+			}
+			.slick-slide {
+				height: auto;
+			}
+			.slick-arrow {
+				width: 40px;
+				height: 40px;
+				@media #{$maxsp} {
+					width: 25px;
+				}
+				&:before {
+					content: "";
+					height: 18px;
+					width: 18px;
+					display: block;
+					border-top: 3px solid $sub_color-o;
+					border-right: 3px solid $sub_color-o;
+					vertical-align: middle;
+					position: absolute;
+					top: 50%;
+				}
+				&.slick-prev {
+					left: -40px;
+					@media #{$maxsp} {
+						left: -25px;
+					}
+					&:before {
+						transform: translateY(-50%) rotate(-135deg);
+						left: 15px;
+						@media #{$maxsp} {
+							left: 9px;
+						}
+					}
+				}
+				&.slick-next {
+					right: -40px;
+					@media #{$maxsp} {
+						right: -25px;
+					}
+					&:before {
+						transform: translateY(-50%) rotate(45deg);
+						left: 7px;
+						@media #{$maxsp} {
+							left: -1px;
+						}
+					}
 				}
 			}
 		}
@@ -2749,8 +2803,8 @@ body.fix {
 							//width: 100%;
 							@include fontsize(13);
 						}
-						&:focus{
-							&::placeholder{
+						&:focus {
+							&::placeholder {
 								color: #fff;
 							}
 							outline: none;
@@ -2758,7 +2812,7 @@ body.fix {
 						&:-webkit-autofill {
 							-webkit-box-shadow: 0 0 0px 1000px #fff inset;
 						}
-						&::placeholder{
+						&::placeholder {
 							color: #ddd;
 						}
 					}
@@ -2800,40 +2854,40 @@ body.fix {
 					width: 100%;
 				}
 			}
-			input[type="radio"].wpcf7c-conf{
-				+ .wpcf7-list-item-label{
-					display: none!important;
+			input[type="radio"].wpcf7c-conf {
+				+ .wpcf7-list-item-label {
+					display: none !important;
 				}
 			}
-			span.wpcf7-list-item{
+			span.wpcf7-list-item {
 				margin: 0;
 			}
-			.form-table-cell dd span.wpcf7-not-valid-tip{
+			.form-table-cell dd span.wpcf7-not-valid-tip {
 				width: auto;
 			}
-			.wpcf7-form-control-wrap{
+			.wpcf7-form-control-wrap {
 				margin-bottom: 0;
-				padding: 0!important;
-				width: auto!important;
-				.wpcf7-radio{
+				padding: 0 !important;
+				width: auto !important;
+				.wpcf7-radio {
 					width: auto;
-					padding: 0!important;
+					padding: 0 !important;
 					margin-top: 10px;
 					display: block;
-					.wpcf7-list-item{
+					.wpcf7-list-item {
 						padding: 0 10px 0;
-						input[type=radio]{
+						input[type="radio"] {
 							display: none;
 							margin: 0;
-							+ .wpcf7-list-item-label{
+							+ .wpcf7-list-item-label {
 								position: relative;
 								cursor: pointer;
 								display: inline-block;
 								padding: 0 30px 15px 28px;
 								white-space: nowrap;
 								width: auto;
-								&::before{
-									background: #FFF;
+								&::before {
+									background: #fff;
 									border: 1px solid #d2d2d2;
 									border-radius: 50%;
 									content: "";
@@ -2846,7 +2900,7 @@ body.fix {
 								}
 								&:after {
 									transition: transform 0.3s ease;
-									background: #F45A65;
+									background: #f45a65;
 									border-radius: 50%;
 									content: "";
 									display: block;
@@ -2858,8 +2912,8 @@ body.fix {
 									transform: scale(0);
 								}
 							}
-							&:checked{
-								+ .wpcf7-list-item-label{
+							&:checked {
+								+ .wpcf7-list-item-label {
 									&:after {
 										transform: scale(1);
 									}
@@ -2898,8 +2952,8 @@ body.fix {
 	}
 	.wpcf7-validation-errors,
 	.wpcf7-acceptance-missing,
-	.wpcf7-response-output{
-		border: none!important;
+	.wpcf7-response-output {
+		border: none !important;
 		color: #dc3232;
 		text-align: center;
 		font-size: 16px;
